@@ -1,0 +1,25 @@
+@startuml
+
+title OpenTaal - Preprocessing
+
+@startuml
+
+actor editor as "Technical\nEditor"
+control Foo3
+entity Foo4
+database "OpenStreetMap" as owm
+database "Nederlandse\nSpellingwet" as wet
+database "Open Dutch\nWordNet" as wordnet
+database "Nederlanse\nWiktionary" as wiktionary
+database "Nederlanse\nWiktipedia" as wikipedia
+participant "Downloaded\nXML" as downloads
+database "Nederlandse\nOpenThesarus" as thesaurus
+
+participant XML
+
+wiktionary -> downloads : To boundary
+wikipedia -> downloads : To control
+wet -> downloads : To entity
+osm -> downloads : To database
+
+@enduml
